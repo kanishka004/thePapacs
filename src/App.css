@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Play", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes appear{
+	from{
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+to{
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* ---------------------------------------- */
+/* Logo Slider */
+
+.slider {
+    height: 300px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-bottom: solid 1px #a7a6a6;
 }
 
-.App-link {
-  color: #61dafb;
+.slide-track {
+    display: flex;
+    width: calc(250px * 12);
+    animation: scroll 40s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 6));
+    }
+}
+
+.slide {
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 43px;
+    perspective: 100px;
+}
+
+.slide img {
+    width: 100%;
+    transition: transform 1s;
+    filter: grayscale(100%);
+}
+
+.slide img:hover {
+    transform: translateZ(20px);
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+
+/* ----------------------------------------- */
+/* Services */
+
+.services-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    margin-top: 6rem;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 8.5rem;
+    margin-bottom: -14rem;
+}
+
+.services-container h1 {
+    text-align: center;
+    font-size: 3rem;
+    /* color: #263733; */
+    margin-bottom: 4.3rem;
+    font-weight: bold;
+}
+
+.chooseService {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scrollbar-color: transparent transparent;
+    user-select: none;
+    background-color: #fff;
+}
+
+.chooseService::-webkit-scrollbar {
+    height: 1px;
+    background-color: transparent;
+}
+
+.chooseService .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 38vw;
+    cursor: pointer;
+    background-color:#e8fcff;
+    padding: 3rem 6rem;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.chooseService .service .service-icon {
+    font-size: 6rem;
+    overflow: hidden;
+    color: #00b4d8;
+}
+
+.chooseService .service .service-name {
+    font-size: 25px;
+    font-weight: bold;
+    color: #263733;
+    text-align: center;
 }
