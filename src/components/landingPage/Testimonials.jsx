@@ -47,7 +47,7 @@ const Testimonials = () => {
                             transition={{ ease: "easeOut", duration: 2 }}
                         >
                             <div class="h-full text-center ">
-                                <img alt="testimonial" class="w-28 h-28 mb-8 object-cover object-center drop-shadow-lg rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://blog.zapr.in/hubfs/Imported_Blog_Media/md-1.jpg" />
+                                <img alt="testimonial" class="w-28 h-28 mb-8 object-cover object-center drop-shadow-lg rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cinimage.org/wp-content/uploads/2021/10/Testimonial-Videos-1.png" />
                                 <p class="leading-relaxed text-justify">Navodaya School Dehradun For saftey purpose we asked a CCTV Camera proposal from Pashupati Consultancy,Their service is very good and well Managed.</p>
                                 <span class="inline-block h-1 w-10 rounded bg-gradient-to-r from-[#00b4d8] to-[#0077b6] ... mt-6 mb-4"></span>
                                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">SAURABH SATI</h2>
